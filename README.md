@@ -42,33 +42,77 @@ The most powerful multilanguage blog starter for Gatsby. Completely headless.
 
 # Table of contents
 
+- [Headless Multilanguage Starter for Gatsby](#headless-multilanguage-starter-for-gatsby)
+- [Features](#features)
+- [Lighthouse scores](#lighthouse-scores)
+- [Table of contents](#table-of-contents)
+- [Why DatoCMS](#why-datocms)
 - [Important notes](#important-notes)
 - [Configuration](#configuration)
   - [1. Starter installation](#1-starter-installation)
   - [2. Environment configuration](#2-environment-configuration)
+    - [1. Access project languages](#1-access-project-languages)
+    - [2. Remove unwanted languages and pick a fallback language](#2-remove-unwanted-languages-and-pick-a-fallback-language)
+    - [3. Add new languages](#3-add-new-languages)
+    - [4. Set the default language](#4-set-the-default-language)
+    - [5. Set the fallbacks](#5-set-the-fallbacks)
   - [3. Environment testing](#3-environment-testing)
+    - [Local environment](#local-environment)
+    - [Gatsby Cloud (optional)](#gatsby-cloud-optional)
   - [4. Understand content models structure](#4-understand-content-models-structure)
+    - [1. Gatsby Node](#1-gatsby-node)
+    - [2. Data-only](#2-data-only)
   - [5. Finalizing starter configuration](#5-finalizing-starter-configuration)
+    - [1. Get rid of blog dummy content](#1-get-rid-of-blog-dummy-content)
+    - [2. Translate the starter base content](#2-translate-the-starter-base-content)
+    - [3. Get rid of the starter fallback language](#3-get-rid-of-the-starter-fallback-language)
+    - [4. Set proper fallbacks (optional)](#4-set-proper-fallbacks-optional)
 - [Managing content](#managing-content)
+  - [Choose which content to generate (and translate)](#choose-which-content-to-generate-and-translate)
+  - [Editing the menu](#editing-the-menu)
+    - [Displaying featured posts in the homepage](#displaying-featured-posts-in-the-homepage)
+    - [Displaying the categories dropdown](#displaying-the-categories-dropdown)
+  - [Editing the categories menu](#editing-the-categories-menu)
+  - [Linking categories and authors to blog posts](#linking-categories-and-authors-to-blog-posts)
+  - [Related posts](#related-posts)
 - [Styling](#styling)
+  - [Colors](#colors)
+  - [useTheme hook](#usetheme-hook)
+  - [Logo](#logo)
+  - [Blog synthax highlighting](#blog-synthax-highlighting)
 - [SEO](#seo)
 - [PWA](#pwa)
 - [Redirect](#redirect)
+    - [When a redirect takes place?](#when-a-redirect-takes-place)
+    - [When a redirect doesn't take place?](#when-a-redirect-doesnt-take-place)
+    - [How the preferred language is evaluated?](#how-the-preferred-language-is-evaluated)
+    - [How the preferred language is updated?](#how-the-preferred-language-is-updated)
 - [404 page](#404-page)
 - [RTL text direction support](#rtl-text-direction-support)
+  - [useTextDirection hook](#usetextdirection-hook)
 - [Extending the starter](#extending-the-starter)
   - [Removing fields](#removing-fields)
   - [Removing pages and templates](#removing-pages-and-templates)
   - [Generating pages](#generating-pages)
   - [Creating new templates](#creating-new-templates)
   - [Internal link navigation](#internal-link-navigation)
+    - [Navigator component](#navigator-component)
+    - [Single link](#single-link)
+    - [Dynamic link with StructuredText](#dynamic-link-with-structuredtext)
   - [Template design strategy](#template-design-strategy)
+    - [Typical approach](#typical-approach)
+    - [Structured text approach](#structured-text-approach)
   - [Accessing languages](#accessing-languages)
   - [Formatting date and time](#formatting-date-and-time)
   - [Increase categories number displayed by the dropdown](#increase-categories-number-displayed-by-the-dropdown)
   - [SEO](#seo-1)
 - [Troubleshooting](#troubleshooting)
+  - [Navigator](#navigator)
+    - [General](#general)
+    - [Structured Text](#structured-text)
+  - [GraphQL](#graphql)
 - [Issues](#issues)
+  - [License](#license)
 
 <br />
 
@@ -713,7 +757,7 @@ For example, if you don't want the `author` field of the content model `blog_pos
 
 ![](https://i.ibb.co/QXhBfTr/Schermata-2022-02-16-alle-01-47-37.png)
 
-**1. Remove from **any query** the `author` field node:**
+**1. Remove from**any query**the `author` field node:**
 
 ```js
 export const query = graphql`
@@ -757,7 +801,7 @@ const BlogPostTemplate = ({
 
 By taking advantage of your code editor search you can easily check if the field is still queried or rendered anywhere.
 
-**4. Once done that, you can **safely delete** the field from the content model on DatoCMS.**
+**4. Once done that, you can**safely delete**the field from the content model on DatoCMS.**
 
 > :warning: The only field you should never delete or rename the Id is the `slug` one. It is used to build the paths and by deleting/renaming it _gatsby-node_ will throw an error. For any other field as long as you understood its purpose, you can safely get rid of it.
 
@@ -1200,3 +1244,7 @@ What happened here is that you removed a field or content model on DatoCMS and f
 # Issues
 
 If you encounter any different issue or you have any kind of request, please open an issue or contact me via [email](smastrom@protonmail.com). I will be happy to help you as soon as I can.
+
+## License
+
+<https://www.svgrepo.com/svg/404338/cup-drink-coffee-tea-beverage>

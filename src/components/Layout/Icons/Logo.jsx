@@ -24,6 +24,8 @@ const Cls_5 = styled.path`
   fill: #fff;
 `;
 
+// https://www.svgrepo.com/svg/404338/cup-drink-coffee-tea-beverage
+
 export const Logo = () => (
   <>
     <svg
